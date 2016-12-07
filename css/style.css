@@ -123,16 +123,17 @@ hr {
 
 pre {
 	width: 70%;
-	max-width: 700px;
-	min-width: 300px;
+	max-width: 760px;
+	min-width: 320px;
 	overflow: scroll;
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
   background-color: #444;
-  color: #c0c0c0;
+  color: rgb(239, 239, 239);
   padding: 1rem;
   border-radius: 4px;
   border: 2px solid #111;
+  text-shadow: -1px -2px 0 #000;
 }
 
 /* Text-level semantics

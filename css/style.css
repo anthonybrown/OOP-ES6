@@ -42,6 +42,7 @@ html {
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
   font-size: 62.5%;
+  color: #555;
   box-sizing: inherit;
 }
 
@@ -122,10 +123,11 @@ hr {
  */
 
 pre {
-	width: 70%;
-	max-width: 760px;
+	width: 80%;
+	max-width: 1600px;
 	min-width: 320px;
-	overflow: scroll;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
   background-color: #444;

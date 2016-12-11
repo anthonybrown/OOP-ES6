@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='EN_US' dir='ltr'>
+	<head>
+		<meta charset='utf-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+		<title>Creating Objects</title>
+		<link rel='stylesheet' href='css/style.css'/>
+		<script src='js/es6-module-loader-dev.js'></script>
+		<script>
+			System.paths.babel= 'js/browser.min.js'
+			System.transpiler = 'babel'
+		</script>
+		<script type='module'>
+			import { Person } from './js/private-person.js'
+
+			let person = new Person('David', 'Bowie')
+			console.log(person.greet('Tony'))
+			result.innerHTML += '<h4>' + person.greet('Tony') + '</h4><br />'
+		</script>
+	</head>
+	<body>
+		<header class='cf'>
+			<h1>Object Oriented JavaScript with ES6</h1>
+			<nav class='cf'>
+				<ul>
+					<li><a href='index.html'>Intro</a></li>
+					<li><a href='create-objects.html'>creating objects</a></li>
+					<li><a href='factory.html'>Factory Pattern</a></li>
+					<li><a href='data-type.html'>Data Type</a></li>
+					<li><a href='class.html'>class</a></li>
+				</ul>
+			</nav>
+		</header>
+		<h2>JavaScript Class</h2>
+
+		<div id='result'></div>
+		<script src='js/class.js'></script>
+	</body>
+</html>
+

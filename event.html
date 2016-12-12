@@ -4,7 +4,7 @@
 		<meta charset='utf-8' />
 		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-		<title>Creating Objects</title>
+		<title>Event System.</title>
 		<link rel='stylesheet' href='css/style.css'/>
 		<script src='js/es6-module-loader-dev.js'></script>
 		<script>
@@ -12,11 +12,28 @@
 			System.transpiler = 'babel'
 		</script>
 		<script type='module'>
-			import { Person } from './js/private-person.js'
+			import {EventTarget} from 'js/eventtarget.js'
 
-			let person = new Person('David', 'Bowie')
-			console.log(person.greet('Tony'))
-			result.innerHTML += '<h4>' + person.greet('Tony') + '</h4><br />'
+			let listener1 = function (e) {
+				console.log(e.type);
+				alert(e.type)
+			}
+
+			let listener2 = function (e) {
+				console.log(e.target)
+				alert(e.target)
+			}
+
+			let evt = new EventTarget()
+			evt.addListener('load', listener1)
+			evt.addListener('load', listener2)
+
+			evt.fireEvent('load')
+
+			evt.removeListener('load', listener1)
+			evt.removeListener('load', listener2)
+
+			evt.fireEvent('load')
 		</script>
 	</head>
 	<body>
@@ -30,15 +47,19 @@
 					<li><a href='data-type.html'>Data Type</a></li>
 					<li><a href='class.html'>class</a></li>
 					<li><a href='privacy.html'>privacy</a></li>
+					<li><a href='parasitic.html'>parasitic</a></li>
 					<li><a href='prototypal.html'>prototypal</a></li>
 					<li><a href='event.html'>event-system</a></li>
 				</ul>
 			</nav>
 		</header>
-		<h2>JavaScript Class</h2>
-
+		<h2>Implementing what we've learned.</h2>
+		<hr />
+		<p>
+			Time to apply what we know about ES6 and inheritance by building<br>
+			an event system.
+		</p>
 		<div id='result'></div>
-		<script src='js/class.js'></script>
+		<!--<script src='js/eventtarget.js'></script>-->
 	</body>
 </html>
-

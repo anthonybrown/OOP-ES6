@@ -1,12 +1,16 @@
-
 <!DOCTYPE html>
 <html lang='EN_US' dir='ltr'>
 	<head>
 		<meta charset='utf-8' />
 		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-		<title>Privacy</title>
+		<title>Prototypal Inheritance.</title>
 		<link rel='stylesheet' href='css/style.css'/>
+		<script src='js/es6-module-loader-dev.js'></script>
+		<script>
+			System.paths.babel= 'js/browser.min.js'
+			System.transpiler = 'babel'
+		</script>
 	</head>
 	<body>
 		<header class='cf'>
@@ -33,5 +37,12 @@
 		</p>
 		<div id='result'></div>
 		<script src='js/prototypal.js'></script>
+		<script type='module'>
+			import { Employee} from 'js/employee.js'
+
+			let person = new Employee('Mike', 'Jones', 'manager')
+			console.log(person.greet('Tony'))
+			result.innerHTML += person.greet('Anthony')
+		</script>
 	</body>
 </html>

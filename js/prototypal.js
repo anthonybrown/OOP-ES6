@@ -58,3 +58,51 @@ result.innerHTML += '<p>As you can see, JavaScript is a prototypical language</b
 I really enjoy this kind of programming in JavaScript as the language is setup for<br>\
 prototypes and prototype chains.The rule of thumb is keep your prototype chains short<br>\
 to avoid performance hits.\</p>'
+
+result.innerHTML += '<h3>Class Inheritance</h3><hr />'
+result.innerHTML += '<p>Classes are sweet to use, they are familiar.<br>\
+Class based inheritance (in JavaScript) is just sugar for prototypal inheritance,<br>\
+and because it\'s prototypal inheritance, it\'s true inheritance.</p>'
+
+result.innerHTML += '<p>Here we will use 2 files, the person.js and employee.js</p>'
+result.innerHTML += '<p>Here is the Person class:</p>'
+
+result.innerHTML += '<code><pre>export class Person {<br>\
+  constructor (firstname, lastname) {<br>\
+    this.firstname = firstname<br>\
+    this.lastname  = lastname<br>\
+  }<br><br>\
+  get fullname () {<br>\
+    return this.firstname + " " + this.lastname<br>\
+  }<br><br>\
+  greet(name) {<br>\
+    return "Hello, " + name + ". My name is " + this.fullname<br>\
+  }<br>\
+}\
+</pre></code>'
+result.innerHTML += '<p>Here is our Employee class:</p>'
+result.innerHTML += '<code><pre>import { Person } from "js/person.js"<br><br>\
+export class Employee extends Person  {<br>\
+  constructor (firstname, lastname, position) {<br>\
+    super(firstname, lastname)<br>\
+    this.position = position<br>\
+  }<br><br>\
+  get fullname () {<br>\
+    return super.fullname + ", " + this.position<br>\
+  }<br><br>\
+  \/\/we can use the super keyword to add a fullname method.<br>\
+  \/\/greet (name) {<br>\
+    \/\/return super.greet(name) + ", I\'m the " + this.position<br>\
+  \/\/}<br>\
+}\
+</pre></code>'
+
+result.innerHTML += '<p>I will use the import statement to use the classes like this</p>'
+result.innerHTML += '<code><pre>import { Employee} from "js/employee.js"<br><br>\
+let person = new Employee("Mike", "Jones", "manager")<br>\
+console.log(person.greet("Tony"))<br>\
+result.innerHTML += person.greet("Anthony")<br>\
+</pre></code>'
+
+result.innerHTML += '<p>As you can see, this is far more superior<br>\
+than the code we had to write in in ES5</p>'
